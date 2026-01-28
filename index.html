@@ -14,10 +14,13 @@
 
     <!-- VIDEO -->
     <div class="video-wrapper">
-      <video autoplay muted loop playsinline>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <iframe
+      src="https://www.youtube.com/embed/VuQ0jw755vc"
+      title="Bankroll Trading System Overview"
+      frameboarder="0"
+      allow="accelorometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
     </div>
 
     <!-- HEADLINE -->
@@ -108,6 +111,29 @@
   </p>
 </footer>
 
-<script src="paystack.js"></script>
+<script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
+
+<script>
+  const yoco = new window.YocoSDK({
+    publicKey: "pk_test8ac6f786nZbgwqP51f04", // TEST KEY (safe for now)
+    });
+
+    document.getElementById("purchaseBtn").addEventListener("click", function () {
+      yoco.showPopup({
+        amountInCents: 499900, // R4,999.00
+        currency: "ZAR",
+        name: "Bankroll Trading System",
+        description: "Lifetime Access - Trading System",
+        callback: function (result) {
+          if (result.error) {
+            alert("Payment failed: " + result.error.message);
+          } else {
+            window.location.href = "success.html";
+          }
+        },
+      });
+    });
+  </script>
+
 </body>
 </html>
