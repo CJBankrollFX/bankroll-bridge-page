@@ -14,15 +14,19 @@
 
     <!-- VIDEO -->
     <div class="video-wrapper">
+    <!-- Tap to unmute overlay -->
+      <div id="unmuteOverlay">🔊 Tap to unmute</div>
+
       <iframe
-      src="https://www.youtube.com/embed/VuOQjw755vc?autoplay=1&mute=1&playsinline=1&rel=0"
+      id="heroVideo"
+      src="https://www.youtube.com/embed/VuOQjw755vc?autoplay=1&mute=1&playsinline=1&rel=0&enablejsapi=1"
       title="Youtube video player"
       frameboarder="0"
-      allow="accelorometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allow="autoplay; encrypted-media, picture-in-picture"
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen>
     </iframe>
-    </div>
+  </div>
 
     <!-- HEADLINE -->
     <h1>Trade Smarter. Live Freer.</h1>
@@ -134,7 +138,17 @@
         },
       });
     });
-  </script>
+    
+    /* 🔊 TAP TO UNMUTE LOGIC */
+    const overlay = document.getElementById("unmuteOverlay");
+    const iframe = document.getElementById("heroVideo");
+
+    overlay.addEventListener("click", () => {
+      iframe.src = iframe.src.replace("mute=1", "mute=0");
+      overlay.style.opacity = "0";
+      setTimeout(() => overlay.remove(), 300);
+      });
+</script>
 
 </body>
 </html>
