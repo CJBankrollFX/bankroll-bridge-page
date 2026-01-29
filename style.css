@@ -175,7 +175,7 @@ footer {
   }
 
   /* Floating contact Icons */
-  .floating-contact {
+  .floating-icons {
     position: fixed;
     bottom:20px;
     right: 20px;
@@ -185,21 +185,19 @@ footer {
     z-index: 9999;
     }
 
-  .contact-icon {
-    width: 48px;
-    height: 48px;
+  .floating-icons .icon {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
     transition: transform 0.2s ease, opacity 0.2s ease;
     }
-
-    .contact-icon img {
-      width: 24px;
-      height: 24px;
-      }
-
+    
       .contact-icon:hover {
         transform: scale(1.08);
         opacity: 0.9;
@@ -212,4 +210,4 @@ footer {
           .contact-icon.instagram {
             background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
             }
-            
+
