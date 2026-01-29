@@ -180,26 +180,36 @@ footer {
     bottom:20px;
     right: 20px;
     display: flex;
+    flex-direction: column;
     gap: 12px;
     z-index: 9999;
     }
 
-    .floating-contact a {
-      width: 48pc;
-      height: 48px;
-      background: #0b0b0b;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      opacity: 0.85;
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .contact-icon img {
+      width: 24px;
+      height: 24px;
       }
 
-      .floating-contact img {
-        width: 22px;
-        height: 22px;
-        filter: invert(1);
+      .contact-icon:hover {
+        transform: scale(1.08);
+        opacity: 0.9;
         }
-        
+
+        .contact-icon.telegram {
+          background: #229ED9;
+          }
+
+          .contact-icon.instagram {
+            background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+            }
+            
