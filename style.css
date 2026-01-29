@@ -119,9 +119,16 @@ button:hover {
 }
 
 /* CONTACT */
-.contact {
+.contact a {
+  color:#00ff99;
+  text-decoration: none;
+  font-weight: 600;
   padding: 50px 20px;
   text-align: center;
+}
+
+.contact a:hover {
+  text-decoration: underline;
 }
 
 /* DISCLAIMER */
@@ -166,3 +173,33 @@ footer {
       opacity: 0.9;
     }
   }
+
+  /* Floating contact Icons */
+  .floating-contact {
+    position: fixed;
+    bottom:20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 9999;
+    }
+
+    .floating-contact a {
+      width: 48pc;
+      height: 48px;
+      background: #0b0b0b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      opacity: 0.85;
+      }
+
+      .floating-contact img {
+        width: 22px;
+        height: 22px;
+        filter: invert(1);
+        }
+        
