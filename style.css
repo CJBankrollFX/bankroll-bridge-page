@@ -62,6 +62,14 @@ button:hover {
   opacity: 0.9;
 }
 
+.pricing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 420px;
+  margin: 30px auto;
+  }
+
 .fine-print {
   font-size: 12px;
   margin-top: 15px;
@@ -81,7 +89,7 @@ button:hover {
 }
 
 .slide {
-  animation: slide 16s infinite;
+  animation: slide 8s infinite;
   opacity: 0.9;
 }
 

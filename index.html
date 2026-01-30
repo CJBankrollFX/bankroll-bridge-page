@@ -37,16 +37,50 @@
     <h2>A Professional Trading System Built From Real Market Experience</h2>
 
     <p class="hero-subtext">
-      Designed to remove emotion, guesswork, and screen-time while maintaining precision,
+      Designed to remove emotion, guesswork, and time while maintaining precision,
       consistency, and disciplined execution across the markets.
     </p>
 
-    <button id="purchaseBtn">Unlock Lifetime Access</button>
+    <div class="pricing-buttons">
+      <button id="lifetimeBtn" class="cta-btn">
+        Lifetime Access - R5,000 Once-Off
+      </button>
+
+    <button id="monthlyBtn" class="cta-btn">
+    Monthly Access - R1,500 / Month
+  </button>
+    </div>
+
+    <section id="packageDetails" style="display:none;">
+      <h2>Choose Your Package</h2>
+
+      <div class="package-box">
+        <h3 id="packageTitle"></h3>
+        <p id="packagePrice"></p>
+
+        <u1 id="packageFeatures"></u1>
+      </div>
+
+      <div class="how-it-works">
+        <h3>How It Works</h3>
+        <o1>
+          <1i>Choose your package and complete payment</1i>
+          <1i>Receive setup instructions via email or Telegram</1i>
+          <1i>Your Trading System is connected and configured</1i>
+          <1i>System runs automatically with built-in risk control</1i>
+          <1i>Ongoing updates and support included</1i>
+        </o1>
+      </div>
+
+      <button id="confirmPayBtn" class="cta-btn">
+        Proceed to Secure Payment
+      </button>
+    </section>
 
     <p class="fine-print">
-      One-time lifetime access fee of R4,999.<br>
-      A small hosting and system maintenance fee of R177 per month applies to securely host
-      the system and ensure continuous updates and performance improvements.
+      One-time lifetime access fee of R5,000.<br>
+      A small hosting and system maintenance fee of R187 per month additionally applies to securely host
+      the system and ensure continuous updates and performance improvements. First month on us.
     </p>
 
   </div>
@@ -59,7 +93,7 @@
   <div class="slider">
     <div class="slide">“This system removed emotion from my trading completely.”</div>
     <div class="slide">“Consistency improved the moment I stopped manual execution.”</div>
-    <div class="slide">“I finally trade without staring at charts all day.”</div>
+    <div class="slide">“I finally trade without staring at charts all day, saving me so much time to enjoy my profits.”</div>
     <div class="slide">“Clean execution, clear risk control, no overtrading.”</div>
   </div>
 </section>
@@ -75,8 +109,8 @@
       <p>
         The system analyses market conditions using a proven, experience-driven strategy
         across US30, NAS100, and Gold (XAUUSD). It handles execution logic, entries, exits,
-        risk management, and trade structure — allowing participation without constant
-        screen exposure.
+        risk management, and trade structure - allowing participation without constant
+        screen exposure and manual analysis interrupting your day-to-day.
       </p>
     </div>
 
@@ -85,7 +119,7 @@
       <p>
         The system focuses exclusively on high-quality, high-probability setups during
         active market conditions. Trades are designed as efficient scalp opportunities,
-        typically ranging between 1 to 20 minutes.
+        typically ranging between 1 to 30 minutes.
       </p>
     </div>
 
@@ -166,19 +200,72 @@ href="https://instagram.com/cjwilliams_bankroll"
     publicKey: "pk_test8ac6f786nZbgwqP51f04", // TEST KEY (safe for now)
     });
 
-    document.getElementById("purchaseBtn").addEventListener("click", function () {
+    let selectedPackage = null;
+    let selectedAmount = null;
+
+    document.getElementById("lifetimeBtn").addEventListener("click", () =>{
+      selectedPackage = "Lifetime Access";
+    selectedAmount = 500000;
+  
+  showPackageDetails(
+    "Lifetime Access - R5,000 Once-Off",
+    "Once-off payment",
+    [
+      "Lifetime access to the Trading System",
+      "Advanced risk management built-in",
+      "Works on US30, NAS100 & XAUUSD",
+      "Full setup guidance",
+      "Hosting billed seperately for Lifetime Access Package"
+      ]
+    );
+    });
+
+    document.getElementById("monthlyBtn").addEventListener("click", () =>{
+      selectedPackage = "Monthly Access";
+      selectedAmount = 150000;
+
+      showPackageDetails(
+        "Monthly Access - R1,500 / Month",
+        "Includes hosting & updates",
+        [
+          "Full Trading System Access",
+          "Hosting Fee Included (R187)",
+          "Automatic Updates & Maintenance",
+          "Risk Management Built-In",
+          "Cancel Anytime with 1 Calendar Month Notice"
+          ]
+    );
+    });
+
+    function showPackageDetails(title, price, features){
+      document.getElementById("packageDetails").style.display = "block";
+      document.getElementById("packageTitle").innerText = title;
+      document.getElementById("packagePrice").innerText = price;
+      
+      const list = document.getElementById("packageFeatures");
+      list.innerHTML = "";
+      features.forEach(item => {
+        const li = document.getElement("li");
+        li.innerText = item;
+        list.appendChild(li);
+        });
+
+        document.getElementById("packageDetails").scrollIntoView({ behaviour: "smooth" });
+        }
+
+    document.getElementById("confirmPayBtn").addEventListener("click", function () {
       yoco.showPopup({
-        amountInCents: 499900, // R4,999.00
+        amountInCents: selectedAmount,
         currency: "ZAR",
-        name: "Bankroll Trading System",
-        description: "Lifetime Access - Trading System",
+        name: selectedPackage,
+        description: "Bankroll Trading System",
         callback: function (result) {
           if (result.error) {
             alert("Payment failed: " + result.error.message);
           } else {
             window.location.href = "success.html";
           }
-        },
+        }
       });
     });
     
