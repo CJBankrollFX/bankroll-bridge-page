@@ -72,13 +72,30 @@
         </ul>
       </div>
 
+      <form id="clientDetailsForm" class="client-form">
+        <input type="text" id="clientName" placeholder="Full Name" required />
+        <input type="email" id="clientEmail" placeholder="Email Address" required/>
+        <input type="text" id="clientContact" placeholder="Telegram or WhatsApp Number" required />
+
+        <label class="checkbox">
+          <input type="checkbox" id="marketingConsent" />
+          I agree to receive setup updates and occasional educational and marketing content. Your personal information is used solely for account setup, system delivery, and support communication and marketing purposes internally. We do not sell, rent, or share your data with third parties. You may optionally consent to receive educational updates and services, system notices, and related communications. You may opt out at any time.
+        </label>
+      </form>
+
+      <p class="legal-short">
+        By proceeding, you confirm that you understand trading involves significant risks and that these systems and tools are provided for educational purposes only.
+        <br />
+        <a href="#" id="openTerms">View Terms, Risk Disclosure & Privacy Policy</a>
+      </p>
+
       <button id="confirmPayBtn" class="cta-btn">
         Proceed to Secure Payment
       </button>
     </section>
 
     <p class="fine-print">
-      One-time lifetime access fee of R5,000.<br>
+      One-time lifetime access fee of R5,000 excludes the monthly hosting fee.<br>
       A small hosting and system maintenance fee of R187 per month additionally applies to securely host
       the system and ensure continuous updates and performance improvements. First month on us.
     </p>
@@ -193,6 +210,42 @@ href="https://instagram.com/cjwilliams_bankroll"
   </a>
 </div>
 
+<div id="termsModal" class="modal-overlay" style="display:nonce;">
+  <div class="modal-content">
+    <h2> Terms, Risk Disclosure & Privacy Policy</h2>
+
+    <h3>Educational Use Only</h3>
+    <p>
+      All tools, systems, and materials provided are for educational and informational purposes only and do
+      not constitute financial, investment, or trading advice. We do not offer account management or
+      personalised financial recommendations.
+    </p>
+
+    <h3>Risk Disclosure</h3>
+    <p>
+      Trading financial markets involves significant risk and may result in losses. You are solely responsible for all investment decisions on your account. Only trade with capital that you can afford to lose. Past performance does not guarantee future results.
+    </p>
+
+    <h3>System Usage</h3>
+    <p>
+      The system operates on one trading account per active symbol. Running multiple symbols simultaneously requires seperate trading accounts. Each additional connected account incurs an R187 monthly hosting and maintenance fee.
+    </p>
+
+    <h3>Refund Policy</h3>
+    <p>
+      Due to the digital nature of our tools, systems and services, all purchases are final. No refunds are offered.
+    </p>
+
+    <h3>Privacy & Data Protection</h3>
+    <p>
+      Your personal information is used strictly for account setup, communication, support and occasional marketing (which you may opt out of at any given time).
+      We do not sell, rent, or share your data with third parties.
+    </p>
+
+    <button id="closeTerms" class="cta-btn">Close</button>
+    </div>
+</div>
+
 <script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
 
 <script>
@@ -279,6 +332,15 @@ href="https://instagram.com/cjwilliams_bankroll"
       setTimeout(() => overlay.remove(), 300);
       });
 
+document.getElementbyId("openTerms").addEventListener("click", function(e) {
+  e.preventDefault();
+document.getElementById("termsModal").style.display = "flex";
+});
+
+document.getElementById("closeTerms").addEventListener("click", function() {
+  document.getElementById("termsModal").style.display = "none";
+  });
+  
 </script>
 
 </body>
