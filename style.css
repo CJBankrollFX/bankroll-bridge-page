@@ -239,10 +239,6 @@ footer {
     line-height: 1.5;
     }
 
-#confirmPayBtn {
-  margin-top: 25px;
-  }
-
 /* Legal short text */
 .legal-short {
   font-size: 13px;
@@ -251,11 +247,15 @@ footer {
   margin-top: 25px;
   }
 
-  .legal-short a {
-    color: #00ff99;
-    text-decoration: underline;
-    cursor: pointer;
-    }
+    .terms-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #00ff99;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 13px;
+      }
 
     /* Modal */
     .modal-overlay {
