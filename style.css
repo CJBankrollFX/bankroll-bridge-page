@@ -341,6 +341,12 @@ CLIENT DETAILS FORM
   text-align: center;
 }
 
+.legal-short a {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+  }
+
 /* FORCE FORM FIELDS TO STACK VERTICALLY */
 .client-form {
   display: flex;
@@ -365,4 +371,3 @@ CLIENT DETAILS FORM
       .client-form .checkbox input {
         margin-top: 4px;
         }
-        
