@@ -58,7 +58,7 @@
         <h3 id="packageTitle"></h3>
         <p id="packagePrice"></p>
 
-        <u1 id="packageFeatures"></u1>
+        <ul id="packageFeatures"></ul>
       </div>
 
       <div class="how-it-works">
@@ -300,12 +300,12 @@ href="https://instagram.com/cjwilliams_bankroll"
       const list = document.getElementById("packageFeatures");
       list.innerHTML = "";
       features.forEach(item => {
-        const li = document.getElement("li");
+        const li = document.createElement("li");
         li.innerText = item;
         list.appendChild(li);
         });
 
-        document.getElementById("packageDetails").scrollIntoView({ behaviour: "smooth" });
+        document.getElementById("packageDetails").scrollIntoView({ behavior: "smooth" });
         }
 
     document.getElementById("confirmPayBtn").addEventListener("click", function () {
@@ -334,14 +334,21 @@ href="https://instagram.com/cjwilliams_bankroll"
       setTimeout(() => overlay.remove(), 300);
       });
 
-document.getElementbyId("openTerms").addEventListener("click", function(e) {
-  e.preventDefault();
-document.getElementById("termsModal").style.display = "flex";
-});
+document.addEventListener("DOMContentLoaded", function () {
+const openTermsBtn = document.getElementById("openTerms");
+const closeTermsBtn = document.getElementById("closeTerms");
+const termsModal = document.getElementById("termsModal");
 
-document.getElementById("closeTerms").addEventListener("click", function() {
-  document.getElementById("termsModal").style.display = "none";
+if (openTermsBtn && closeTermsBtn && termsModal) {
+  openTermsBtn.addEventListener("click", () => {
+    termsModal.style.display = "flex";
   });
+
+  closeTermsBtn.addEventListener("click", () => {
+    termsModal.style.display = "none";
+  });
+  }
+});
 
 </script>
 
