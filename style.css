@@ -340,3 +340,29 @@ CLIENT DETAILS FORM
   margin-top: 6px;
   text-align: center;
 }
+
+/* FORCE FORM FIELDS TO STACK VERTICALLY */
+.client-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  }
+
+  .client-form input {
+    width: 100%;
+    box-sizing: border-box;
+    }
+
+    .client-form .checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      opacity: 0.85;
+      margin-top: 12px;
+      }
+
+      .client-form .checkbox input {
+        margin-top: 4px;
+        }
+        
