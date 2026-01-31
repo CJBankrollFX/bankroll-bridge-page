@@ -225,3 +225,22 @@ footer {
             background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
             }
 
+/* HOW IT WORKS LIST*/
+.how-it-works-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 20px auto 30px;
+  max-width: 420px;
+  text-align: left;
+  }
+
+  .how-it-works-list li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    }
+
+#confirmPayBtn {
+  margin-top: 25px;
+  }
+  
+
