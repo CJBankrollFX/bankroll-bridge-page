@@ -384,14 +384,18 @@ if (openTermsBtn && closeTermsBtn && termsModal) {
 });
 
 // RESULTS SLIDER AUTO ROTATE
-const slides = document.querySelectorAll(".result-slide");
-let currentSlide = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".result-slide");
+  let currentSlide = 0;
 
-setInterval(() => {
+  if (slides.length === 0) return;
+  
+  setInterval(() => {
   slides[currentSlide].classList.remove("active");
   currentSlide = (currentSlide + 1) % slides.length;
   slides[currentSlide].classList.add("active");
   }, 7000);
+  });
 </script>
 
 </body>
