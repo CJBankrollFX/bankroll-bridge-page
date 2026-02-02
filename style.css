@@ -378,3 +378,51 @@ CLIENT DETAILS FORM
       .client-form .checkbox input {
         margin-top: 4px;
         }
+
+/* RESULTS CARD */
+.results-card {
+  margin-top: 40px;
+  padding: 24px;
+  background: #0b0b0b;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.12);
+  text-align: center;
+  }
+
+  .results-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: #ffffff;
+    }
+
+    /* RESULTS SLIDER */
+    .results-slider {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      height: 520px;
+      margin: 20px auto;
+      overflow: hidden;
+      }
+
+      .results-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+        }
+
+        .results-slide.active {
+          opacity: 1;
+          }
+
+          .results-note {
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: #bdbdbd;
+            }
