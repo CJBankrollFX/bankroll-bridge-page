@@ -109,6 +109,21 @@
     <div class="slide">“I finally trade without staring at charts all day, saving me so much time to enjoy my profits.”</div>
     <div class="slide">“Clean execution, clear risk control, no overtrading.”</div>
   </div>
+
+  <div class="results-card">
+    <h4>Automated Trading Results</h4>
+
+    <div class="results-slider">
+      <img src="images/xauusd-result-1.jpg" alt="XAUUSD automated trade result" class="result-slide active">
+      <img src="images/xauusd-result-2.jpg" alt="XAUUSD automated trade result">
+      <img src="images/xauusd-result-3.jpg" alt="XAUUSD automated trade result">
+    </div>
+
+    <p class="results-note">
+      Live executions from the automated trading system.<br>
+      More results coming soon - in data collection process.
+    </p>
+  </div>
 </section>
 
 <!-- WHY SYSTEM SECTION -->
@@ -368,6 +383,14 @@ if (openTermsBtn && closeTermsBtn && termsModal) {
   }
 });
 
+const slides = document.querySelectorAll(".result-slide");
+let currentSlide = 0;
+
+setInterval(() => {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+  }, 7000);
 </script>
 
 </body>
