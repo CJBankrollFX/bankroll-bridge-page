@@ -405,7 +405,7 @@ CLIENT DETAILS FORM
       overflow: hidden;
       }
 
-      .results-slide {
+      .result-slide {
         position: absolute;
         inset: 0;
         width: 100%;
@@ -417,7 +417,7 @@ CLIENT DETAILS FORM
         transition: opacity 0.6s ease-in-out;
         }
 
-        .results-slide.active {
+        .result-slide.active {
           opacity: 1;
           }
 
