@@ -239,6 +239,13 @@ footer {
     line-height: 1.5;
     }
 
+.how-it-works h3 {
+  font-size: 1.25rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  }
+
 /* Legal short text */
 .legal-short {
   font-size: 13px;
