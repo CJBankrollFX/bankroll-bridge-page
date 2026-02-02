@@ -89,8 +89,8 @@ button:hover {
 }
 
 .slide {
-  animation: slide 8s infinite;
-  opacity: 0.9;
+  animation: slide 5s infinite;
+  opacity: 0.5;
 }
 
 @keyframes slide {
@@ -419,7 +419,8 @@ CLIENT DETAILS FORM
 
         .result-slide.active {
           opacity: 1;
-          }
+          z-index: 2;
+        }
 
           .results-note {
             margin-top: 14px;

@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".result-slide");
   let currentSlide = 0;
 
-  if (slides.length === 0) return;
+  if (slides.length <= 1) return;
   
   setInterval(() => {
   slides[currentSlide].classList.remove("active");
