@@ -37,7 +37,7 @@
     <h2>A Professional Trading System Built From Real Market Experience</h2>
 
     <p class="hero-subtext">
-      Designed to remove emotion, guesswork, and time while maintaining precision,
+      Designed to remove emotion, guesswork, and save time while maintaining precision,
       consistency, and disciplined execution across the markets.
     </p>
 
@@ -84,7 +84,7 @@
       </form>
 
       <p class="legal-short">
-        By proceeding, you confirm that you understand trading involves significant risks and that these systems and tools are provided for educational purposes only.
+        By proceeding, you confirm that you understand trading involves significant risks and that these systems and tools are provided for educational purposes only. And are utilised at the users own personal risk.
         <br />
         <button type="button" id="openTerms" class="terms-btn">
           View Terms, Risk Disclosure & Privacy Policy
@@ -94,14 +94,8 @@
       <button id="confirmPayBtn" class="cta-btn">
         Proceed to Secure Payment
       </button>
-    </section>
 
-    <p class="fine-print">
-      One-time lifetime access fee of R5,000 excludes the monthly hosting fee.<br>
-      A small hosting and system maintenance fee of R187 per month additionally applies to securely host
-      the system and ensure continuous updates and performance improvements. First month on us.
-    </p>
-
+      <p id="dynamicDisclaimer" class="fine-print" style="display:none;"></p>
   </div>
 </section>
 
@@ -124,12 +118,12 @@
   <div class="card-grid">
 
     <div class="card">
-      <h4>More Freedom. Less Screen Time.</h4>
+      <h4>More Freedom. Less Labour.</h4>
       <p>
         The system analyses market conditions using a proven, experience-driven strategy
         across US30, NAS100, and Gold (XAUUSD). It handles execution logic, entries, exits,
         risk management, and trade structure - allowing participation without constant
-        screen exposure and manual analysis interrupting your day-to-day.
+        manual analysis and screen time interrupting your day-to-day hours.
       </p>
     </div>
 
@@ -138,16 +132,18 @@
       <p>
         The system focuses exclusively on high-quality, high-probability setups during
         active market conditions. Trades are designed as efficient scalp opportunities,
-        typically ranging between 1 to 30 minutes.
+        typically ranging between 1 to 30 minutes, with automatic risk management with
+        trade opportunities executing real time entries and exits to save you time and PT.
       </p>
     </div>
 
     <div class="card">
       <h4>Never Miss a Setup Again</h4>
       <p>
-        Busy schedules no longer mean missed opportunities. The system continuously
-        monitors the market and executes according to its ruleset, ensuring opportunities
-        are acted on even when you’re unavailable.
+        Busy schedules and proper entry struggles no longer mean missed opportunities. 
+        The system continuously monitors the market and executes according to its ruleset,
+        ensuring opportunities are acted on even when you’re unavailable, with automatic 
+        risk applied according to your specified appetite.
       </p>
     </div>
 
@@ -182,12 +178,12 @@
 <!-- DISCLAIMER -->
 <footer>
   <p class="disclaimer">
-    TRADING FOREX AND INDICES CARRIES A HIGH LEVEL OF RISK AND MAY NOT BE SUITABLE FOR ALL INVESTORS.
+    TRADING FOREX AND INDICES CARRIES A HIGH LEVEL OF RISK AND MAY NOT BE SUITABLE FOR EVERYONE.
     MARKET MOVEMENTS CAN BE HIGHLY VOLATILE, AND PAST PERFORMANCE DOES NOT GUARANTEE FUTURE RESULTS.
     NO RETURNS ARE GUARANTEED. ALL INFORMATION AND SYSTEMS SHARED ARE FOR EDUCATIONAL PURPOSES ONLY
-    AND SHOULD NOT BE CONSIDERED FINANCIAL ADVICE. ALWAYS TRADE RESPONSIBLY AND ONLY RISK CAPITAL
-    YOU CAN AFFORD TO LOSE. CLARENCE WILLIAMS IS REGULATED BY THE FSCA AS A REPRESENTATIVE OPERATING
-    UNDER FSP 54453.
+    AND UTILISED AT THE SOLE DISCRETION OF THE USER NOT BEING CONSIDERED AS ANY FORM OF FINANCIAL ADVICE. 
+    ALWAYS TRADE RESPONSIBLY AND ONLY RISK CAPITAL THAT YOU CAN AFFORD TO LOSE. CLARENCE WILLIAMS IS 
+    REGULATED BY THE FSCA AS A REPRESENTATIVE OPERATING UNDER FSP 54453.
   </p>
 </footer>
 
@@ -220,17 +216,17 @@ href="https://instagram.com/cjwilliams_bankroll"
     <p>
       All tools, systems, and materials provided are for educational and informational purposes only and do
       not constitute financial, investment, or trading advice. We do not offer account management or
-      personalised financial recommendations.
+      personalised financial recommendations. By utilise our systems and tools, you agree to do so at your own risk.
     </p>
 
     <h3>Risk Disclosure</h3>
     <p>
-      Trading financial markets involves significant risk and may result in losses. You are solely responsible for all investment decisions on your account. Only trade with capital that you can afford to lose. Past performance does not guarantee future results.
+      Trading financial markets involves significant risk and may result in losses. You are solely responsible for all investments into your account and trades. You should only trade with capital that you can afford to lose. Past performance does not guarantee future results.
     </p>
 
     <h3>System Usage</h3>
     <p>
-      The system operates on one trading account per active symbol. Running multiple symbols simultaneously requires seperate trading accounts. Each additional connected account incurs an R187 monthly hosting and maintenance fee.
+      The system operates on one trading account per active symbol. Running multiple symbols simultaneously requires seperate trading accounts. Each additional connected account incurs an additional R187 monthly hosting and maintenance fee. The lifetime package excludes the maintenance and server fee, and users will receive a Yoco Payment request every calendar month to renew their server and maintenance fees, or monthly subscription fees for monthly subscribers. If a server fee, or monthly subscription fee is missed, the user loses their rights to utilise the system immediately, and will automatically lose access to the system until payment is received. The system may undergo maintenance or performance upgrades at any given time, leaving the system offline until completed. A monthly subscriber means they have a full calendar month access of online system use, which excludes upgrades and maintenance periods.
     </p>
 
     <h3>Refund Policy</h3>
@@ -258,22 +254,32 @@ href="https://instagram.com/cjwilliams_bankroll"
     let selectedPackage = null;
     let selectedAmount = null;
 
+    const disclaimerEl = document.getElementById("dynamicDisclaimer");
+
     document.getElementById("lifetimeBtn").addEventListener("click", () =>{
       selectedPackage = "Lifetime Access";
     selectedAmount = 500000;
   
   showPackageDetails(
     "Lifetime Access - R5,000 Once-Off",
-    "Once-off payment",
+    
     [
       "Lifetime access to the Trading System",
       "Advanced risk management built-in",
-      "Works on US30, NAS100 & XAUUSD",
+      "Works on US30, NAS100 & XAUUSD - Switch between activating each",
       "Full setup guidance",
       "Hosting billed seperately for Lifetime Access Package"
       ]
     );
-    });
+
+    // Lifetime disclaimer
+    disclaimerEl.innerHTML = `
+    One-time lifetime access fee of <strong>R5,000</strong>' excludes the monthly hosting fee.<br>
+    A small hosting and system maintenance fee of <strong>R187 per month</strong> additionally applies to securely host the system and ensure continuous updates and performance improvements.
+    <strong>First month on us.</strong>
+    `;
+    disclaimerEl.style.display = "block";
+  });
 
     document.getElementById("monthlyBtn").addEventListener("click", () =>{
       selectedPackage = "Monthly Access";
@@ -281,15 +287,27 @@ href="https://instagram.com/cjwilliams_bankroll"
 
       showPackageDetails(
         "Monthly Access - R1,500 / Month",
-        "Includes hosting & updates",
+        "Includes hosting & update fees",
         [
           "Full Trading System Access",
-          "Hosting Fee Included (R187)",
+          "Monthly Hosting Fee Included",
           "Automatic Updates & Maintenance",
           "Risk Management Built-In",
+          "Works on US30, NAS100 & XAUUSD - Switch between activating each",
+          "Full setup Guidance",
           "Cancel Anytime with 1 Calendar Month Notice"
           ]
     );
+
+    // Monthly disclaimer
+    disclaimerEl.innetHTML = `
+    Recurring <strong>R1,500/Month<strong> includes hosting and system maintenance fees to securely
+    host the system and ensure continuous updates and performance improvements.<br><br>
+    You will receive a <strong>Yoco payment request every calendar month</strong> on the day of first
+    purchase. One missed payment revokes your rights to utilise the service and your access will be
+    immediately removed until payment is made in full.
+    `;
+    disclaimerEl.style.display = "block";
     });
 
     function showPackageDetails(title, price, features){
