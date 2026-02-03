@@ -1,5 +1,29 @@
 const fetch = globalThis.fetch;
 
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
+const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME;
+
+async function saveToAirtable(record) {
+    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`;
+
+    const res = await fetch(url, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                records: [{ fields: record }],
+            }),
+        });
+        
+        if (!res.ok) {
+            const text = await res.text();
+            console.error("Airtable error:", text);
+        }
+    }
+
 export async function handler(event) {
     try {
         const { amount, email, name } = JSON.parse(event.body);
@@ -38,6 +62,19 @@ export async function handler(event) {
                             });
 
                             const data = await response.json();
+
+                            await saveToAirtable({
+                                "Full Name": name,
+                                "Email": email,
+                                "Telegram / WhatsApp": "",
+                                "Package": "Lifetime Access",
+                                "Amount (ZAR)": amount,
+                                "Payment ID": data.id,
+                                "Payment Status": "pending",
+                                "Created at": new Date().toISOString(),
+                                "Next Billing Date": null,
+                                "Source": "Landing Page",
+                                });
 
                             return {
                                 statusCode: 200,
