@@ -267,12 +267,7 @@ href="https://instagram.com/cjwilliams_bankroll"
     </div>
 </div>
 
-<script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
 <script>
-  const yoco = new window.YocoSDK({
-    publicKey: "pk_live_64966e77nZbgwqPa1304", // Live Key
-    });
-
     let selectedPackage = null;
     let selectedAmount = null;
 
@@ -347,22 +342,6 @@ href="https://instagram.com/cjwilliams_bankroll"
 
         document.getElementById("packageDetails").scrollIntoView({ behavior: "smooth" });
         }
-
-    document.getElementById("confirmPayBtn").addEventListener("click", function () {
-      yoco.showPopup({
-        amountInCents: selectedAmount,
-        currency: "ZAR",
-        name: selectedPackage,
-        description: "Bankroll Trading System",
-        callback: function (result) {
-          if (result.error) {
-            alert("Payment failed: " + result.error.message);
-          } else {
-            window.location.href = "success.html";
-          }
-        }
-      });
-    });
     
     /* 🔊 TAP TO UNMUTE LOGIC */
     const overlay = document.getElementById("unmuteOverlay");
@@ -389,6 +368,44 @@ if (openTermsBtn && closeTermsBtn && termsModal) {
   });
   }
 });
+
+document.getElementById("confirmPayBtn").addEventListener("click", function () {
+  if (!selectedAmount) {
+    alert("Please select a package first");
+  return;
+}
+
+// selectedAmount is already in cents
+pay(selectedAmount / 100); //convert to rands
+});
+
+// pay() function
+async function pay(amountInRands) {
+  const name = document.getElementById("clientName").value;
+  const email = document.getElementById("clientEmail").value;
+
+  if (!name || !email) {
+    alert("Please enter your name and email");
+    return;
+    }
+
+        const res = await fetch("/.netlify/functions/create-payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount: amountInRands,
+            name,
+            email,
+            })
+            });
+
+            const data = await res.json();
+            if (data.error) {
+              alert("Payment failed: " + data.error);
+              } else {
+                window.location.href = "/success.html";
+                }
+                }
 
 // RESULTS SLIDER AUTO ROTATE
 document.addEventListener("DOMContentLoaded", () => {
