@@ -403,7 +403,7 @@ async function pay(amountInRands) {
             if (data.error) {
               alert("Payment failed: " + data.error);
               } else {
-                window.location.href = "/success.html";
+                window.location.href = data.checkoutUrl;
                 }
                 }
 

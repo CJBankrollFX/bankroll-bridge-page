@@ -1,6 +1,6 @@
 const fetch = globalThis.fetch;
 
-exports.handler = async (event) => {
+export async function handler(event) {
     try {
         const { amount, email, name } = JSON.parse(event.body);
 
@@ -12,12 +12,11 @@ exports.handler = async (event) => {
                 }
 
                 const YOCO_SECRET_KEY = process.env.YOCO_SECRET_KEY;
-
                 if (!YOCO_SECRET_KEY) {
                     throw new Error("YOCO_SECRET_KEY is missing");
                     }
 
-                    const response = await fetch("https://online.yoco.com/v1/charges/", {
+                    const response = await fetch("https://payments.yoco.com/api/checkouts", {
                         method: "POST",
                         headers: {
                             Authorization: `Bearer ${YOCO_SECRET_KEY}`,
@@ -26,10 +25,14 @@ exports.handler = async (event) => {
                             body: JSON.stringify({
                                 amount: amount *100, //cents
                                 currency: "ZAR",
-                                metadata: {
-                                    customer_name: name,
-                                    customer_email: email,
-                                    source: "BankrollFX Website",
+                                successUrl: "https://bankrollfx.com/success.html",
+                                cancelUrl: "https://bankrollfx.com",
+                                customer: {
+                                    email,
+                                    name,
+                                    },
+                                    metadata: {
+                                        source: "BankrollFX Website",
                                     },
                                 }),
                             });
@@ -38,16 +41,15 @@ exports.handler = async (event) => {
 
                             return {
                                 statusCode: 200,
-                                body: JSON.stringify(data),
+                                body: JSON.stringify({ checkoutUrl: data.redirectUrl }),
                                 };
-
                                 } catch (err) {
                                     return {
                                         statusCode: 500,
                                         body: JSON.stringify({ error: err.message }),
                                         };
                                         }
-                                        };
+                                        }
 
 
 
