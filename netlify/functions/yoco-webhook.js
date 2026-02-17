@@ -67,11 +67,10 @@ exports.handler = async (event) => {
                         paymentStatus === "paid"
                         ? "Paid"
                         : paymentStatus === "pending"
-                        ? "Pending"
+                        ? "pending"
                         : "Failed",
                     },
                 }),
             }
         );
     }
-    
