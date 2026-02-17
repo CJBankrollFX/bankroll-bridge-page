@@ -68,7 +68,7 @@ export async function handler(event) {
                                 "Full Name": name,
                                 "Email": email,
                                 "Telegram / WhatsApp": "",
-                                "Package": "packageType",
+                                "Package": packageType,
                                 "Amount (ZAR)": amount,
                                 "Payment ID": data.id,
                                 "Payment Status": "pending",
