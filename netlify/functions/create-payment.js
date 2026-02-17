@@ -21,6 +21,7 @@ async function saveToAirtable(record) {
         if (!res.ok) {
             const text = await res.text();
             console.error("Airtable error:", text);
+            throw new Error(text);
         }
     }
 
