@@ -28,7 +28,7 @@ export async function handler(event) {
     try {
         const { amount, email, name } = JSON.parse(event.body);
 
-        if (!amount || amount < 200) {
+        if (!amount || amount < 20) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: "Invalid amount" }),
