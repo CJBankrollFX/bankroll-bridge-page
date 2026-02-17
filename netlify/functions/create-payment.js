@@ -27,7 +27,7 @@ async function saveToAirtable(record) {
 
 export async function handler(event) {
     try {
-        const { amount, email, name, packageType } = JSON.parse(event.body);
+        const { amount, email, name, contact, packageType } = JSON.parse(event.body);
 
         if (!amount || amount < 20) {
             return {
@@ -67,7 +67,7 @@ export async function handler(event) {
                             await saveToAirtable({
                                 "Full Name": name,
                                 "Email": email,
-                                "Telegram / WhatsApp": "",
+                                "Telegram / WhatsApp": contact,
                                 "Package": packageType,
                                 "Amount (ZAR)": amount,
                                 "Payment ID": data.id,
