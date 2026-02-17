@@ -383,7 +383,7 @@ pay(selectedAmount / 100, selectedPackage); //convert to rands
 async function pay(amountInRands, packageType) {
   const name = document.getElementById("clientName").value;
   const email = document.getElementById("clientEmail").value;
-  const telegram = document.getElementById("clientContact").value;
+  const contact = document.getElementById("clientContact").value;
 
   if (!name || !email) {
     alert("Please enter your name and email");
