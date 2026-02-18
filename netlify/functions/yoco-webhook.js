@@ -1,10 +1,13 @@
 exports.handler = async (event) => {
     try {
+        console.log("RAW EVENT BODY:", event.body);
+
         const body = JSON.parse(event.body);
+        console.log("PARSED BODY:", body);
         
         //Adjust this depending on your payment provider structure
         const paymentId = body.data?.id;
-        const paymentStatus = body.data?.status; // "paid", "failed", "pending".
+        const paymentStatus = body.data?.status; // "succeeded", "failed", "pending".
 
         if (!paymentId) {
             return {
@@ -63,7 +66,7 @@ exports.handler = async (event) => {
                     fields: {
                         "Payment Status":
                         paymentStatus === "succeeded"
-                        ? "paid"
+                        ? "succeeded"
                         : paymentStatus === "pending"
                         ? "pending"
                         : "failed",
