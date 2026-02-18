@@ -6,8 +6,8 @@ exports.handler = async (event) => {
         console.log("PARSED BODY:", body);
         
         //Adjust this depending on your payment provider structure
-        const paymentId = body.data?.id;
-        const paymentStatus = body.data?.status; // "succeeded", "failed", "pending".
+        const paymentId = body.payload?.metadata?.checkoutId;
+        const paymentStatus = body.payload?.status; // "succeeded", "failed", "pending".
 
         if (!paymentId) {
             return {
