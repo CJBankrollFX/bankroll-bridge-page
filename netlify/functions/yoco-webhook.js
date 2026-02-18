@@ -29,7 +29,7 @@ exports.handler = async (event) => {
 };
 
     async function updateAirtable(paymentId,paymentStatus) {
-        const AIRTABLE_API_KEY = ProcessingInstruction.env.AIRTABLE_API_KEY;
+        const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
         const BASE_ID = process.env.AIRTABLE_BASE_ID;
         const TABLE_NAME = "Payments"; // <-- CHANGE THIS TO ACTUAL TABLE NAME
 
@@ -62,11 +62,11 @@ exports.handler = async (event) => {
                 body: JSON.stringify({
                     fields: {
                         "Payment Status":
-                        paymentStatus === "paid"
-                        ? "Paid"
+                        paymentStatus === "succeeded"
+                        ? "paid"
                         : paymentStatus === "pending"
                         ? "pending"
-                        : "Failed",
+                        : "failed",
                     },
                 }),
             }
