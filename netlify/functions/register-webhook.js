@@ -3,7 +3,7 @@ exports.handler = async () => {
         const response = await fetch("https://payments.yoco.com/api/webhooks", {
             method: "POST",
             headers: {
-                Authorization: `Bearer ${ProcessingInstruction.env.YOCO_SECRET_KEY}`,
+                Authorization: `Bearer ${process.env.YOCO_SECRET_KEY}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
