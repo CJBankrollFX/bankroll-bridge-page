@@ -26,7 +26,7 @@ exports.handler = async (event) => {
             const customerName = body.payload?.metadata?.name;
 
             if (customerEmail) {
-                await fetch(`/.netlify/functions/send-confirmation`, {
+                await fetch(`${baseUrl}/.netlify/functions/send-confirmation`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
