@@ -33,7 +33,7 @@ exports.handler = async (event) => {
 
                 console.log("Triggering send-confirmation...");
 
-                await fetch("/.netlify/functions/send-confirmation", {
+                await fetch("https://bankrollfx.com/.netlify/functions/send-confirmation", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
