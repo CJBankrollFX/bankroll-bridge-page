@@ -22,11 +22,18 @@ exports.handler = async (event) => {
         //Only send email if payment succeeded
         if (paymentStatus === "succeeded") {
 
+            console.log("Payment succeeded. Preparing to trigger email...");
+
             const customerEmail = body.payload?.metadata?.email;
             const customerName = body.payload?.metadata?.name;
 
+            console.log("Customer Email:", customerEmail);
+
             if (customerEmail) {
-                await fetch(`${baseUrl}/.netlify/functions/send-confirmation`, {
+
+                console.log("Triggering send-confirmation...");
+
+                await fetch("/.netlify/functions/send-confirmation", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -34,6 +41,8 @@ exports.handler = async (event) => {
                     name: customerName
                 })
             });
+        } else {
+            console.log("No customer email found in metadata.");
         }
     }
         return {
