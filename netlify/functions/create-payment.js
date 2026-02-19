@@ -58,6 +58,10 @@ export async function handler(event) {
                                     },
                                     metadata: {
                                         source: "BankrollFX Website",
+                                        email: email,
+                                        name: name,
+                                        contact: contact,
+                                        packageType: packageType,
                                     },
                                 }),
                             });

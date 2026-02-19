@@ -22,8 +22,8 @@ exports.handler = async (event) => {
         //Only send email if payment succeeded
         if (paymentStatus === "succeeded") {
 
-            const customerEmail = body.payload?.customer?.email;
-            const customerName = body.payload?.customer?.name;
+            const customerEmail = body.payload?.metadata?.email;
+            const customerName = body.payload?.metadata?.name;
 
             if (customerEmail) {
                 await fetch(`/.netlify/functions/send-confirmation`, {
