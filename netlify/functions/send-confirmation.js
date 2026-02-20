@@ -56,6 +56,14 @@ function generateEmailTemplate(name, packageType) {
 
     <hr/>
 
+    <h3>Step 2 - Download MetaTrader 5</h3>
+
+    <a href="https://www.metatrader5.com/en/download" style="${buttonStyle}">
+    Download MetaTrader 5
+    </a>
+
+    <p>Once installed, log in using the trading account credentials sent to your email by Space Markets. Contact our admin for assistance if you need.</p>
+
     <h3>Step 3 - Fund Your Space Markets Account</h3>
     <p>Minimum R1500 required. R3000+ recommended.</p>
 
