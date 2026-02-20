@@ -2,17 +2,8 @@ const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-/* ---Button Stling Must be above  template function --- */
-const buttonStyle = `
-display:inline-block;
-padding:12px 20px;
-margin:10px 0;
-background-color:#000;
-color:#fff;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold;
-`;
+/* ---Button Styling Must be above  template function --- */
+const buttonStyle = "display:inline-block;padding:12px 20px;margin:10px 0;background-color:#000;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;";
 
 /* --- Email Template Generator --- */
 function generateEmailTemplate(name, packageType) {
@@ -26,7 +17,7 @@ function generateEmailTemplate(name, packageType) {
     <p>Your Lifetime package includes <strong>1 month free server fee.</strong></p>
     <p>Thereafter you will receive a monthly R187 renewal link per active trading account connected onto the system.</p>
     <p>If a payment is missed, your server will automatically disconnect until renewal is completed.</p>
-    <a href="https://pay.yoco.com/r/m05yLK" style="${buttonStyle}>
+    <a href="https://pay.yoco.com/r/mO5yLK" style="${buttonStyle}>
     Pay Monthly Server Fee (R187)
     </a>
     `
