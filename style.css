@@ -426,7 +426,7 @@ CLIENT DETAILS FORM
         opacity: 0;
         z-index: 0;
         pointer-events: none;
-        transition: opacity 0.6s ease-in-out;
+        transition: opacity 2s ease-in-out;
         }
 
         .results-slide.active {
