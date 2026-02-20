@@ -17,7 +17,7 @@ function generateEmailTemplate(name, packageType) {
     <p>Your Lifetime package includes <strong>1 month free server fee.</strong></p>
     <p>Thereafter you will receive a monthly R187 renewal link per active trading account connected onto the system.</p>
     <p>If a payment is missed, your server will automatically disconnect until renewal is completed.</p>
-    <a href="https://pay.yoco.com/r/mO5yLK" style="${buttonStyle}>
+    <a href="https://pay.yoco.com/r/mO5yLK" style="${buttonStyle}">
     Pay Monthly Server Fee (R187)
     </a>
     `
