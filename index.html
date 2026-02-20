@@ -385,6 +385,7 @@ pay(selectedAmount / 100, selectedPackage); //convert to rands
 
 // pay() function
 async function pay(amountInRands, packageType) {
+  document.getElementById("loadingIndicator").style.display = "flex";
   const name = document.getElementById("clientName").value;
   const email = document.getElementById("clientEmail").value;
   const contact = document.getElementById("clientContact").value;
@@ -428,6 +429,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 7000);
   });
 </script>
+
+<div id="loadingIndicator">
+  <div class="loading-spinner"></div>
+  <span>Connecting to secure payment...</span>
+</div>
 
 </body>
 </html>
