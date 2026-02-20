@@ -45,7 +45,7 @@ function generateEmailTemplate(name, packageType) {
     <div style="font-family: Arial, sans-serif; max-width: 650px; margin: auto; line-height:1.6; color:#222;">
 
     <div style="text-align:center; margin-bottom:20px;">
-    <img src="https://bankrollfx.com/images/bankrollfxlogo.jpeg" width="180" />
+    <img src="https://bankrollfx.com/images/bankrollfxlogo.jpeg" style="width:160px; max-width:80%; height:auto;" />
     </div>
 
     <h2>Welcome ${name || ""},</h2>
