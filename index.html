@@ -463,6 +463,21 @@ document.addEventListener("DOMContentLoaded", () => {
   slides[currentSlide].classList.add("active");
   }, 7000);
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".testimonials .slide");
+    let current = 0;
+
+    if (slides.length === 0) return;
+
+    slides[current].classList.add("active");
+
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 6000);
+  });
 </script>
 
 <div id="loadingIndicator">
