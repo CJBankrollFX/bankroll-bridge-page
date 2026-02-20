@@ -115,10 +115,22 @@ button:hover {
   min-height: 80px;
 }
 
+.testimonials h3 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
 /* WHY SYSTEM */
 .why-system {
   padding: 60px 20px;
   text-align: center;
+}
+
+.why-system h3 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 25px;
 }
 
 .card-grid {
