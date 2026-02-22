@@ -64,37 +64,43 @@ function generateEmailTemplate(name, packageType) {
 
     <p>Once installed, log in using the trading account credentials sent to your email by Space Markets. Contact our admin for assistance if you need.</p>
 
-    <h3>Step 3 - Fund Your Space Markets Account</h3>
-    <p>Minimum R1500 required. R3000+ recommended.</p>
-
     <hr/>
 
-    <h3>Step 4 - Contact Admin To Link Your Account to the System</h3>
+    <h3>Step 3 - Contact Admin Either via this email or Telegram below, to go over Risk Tiers, Complete your Intemediary Mandate and Link Your Account to the System</h3>
     <a href="https://t.me/Bankroll_Forex_Admin" style="${buttonStyle}">
     Contact Admin on Telegram
     </a>
 
     <p>Send Admin:</p>
     <ul>
+    <li>Your Name and email address associated with the form</li>
     <li>Your Space Markets account number</li>
     <li>Your MetaTrader auto-generated passcode sent via Space Markets to your email</li>
+    <li>Your Signed copy of the Mandate with risk tiers and parameters defined and consented by you as the client</li>
     </ul>
 
     <p><strong>Important:</strong> These credentials only allow MetaTrader 5 terminal access. We have no access to your funds.</p>
+
+    <hr/>
+
+    <h3>Step 4 - Fund Your Space Markets Account</h3>
+    <p>Minimum R1500 required for system operation. R3000+ recommended for optimal risk management.</p>
+
+    <hr/>
 
     ${renewalSection}
 
     <hr/>
 
     <h3>Important Disclaimer</h3>
-    <p>By completing your purchase, you confirmed acceptance of our Terms & Conditions.</p>
-    <p>This service is provided strictly for educational purposes as a tool to assist you when trading, to learn and understand the markets.</p>
+    <p>By completing your purchase, you confirmed acceptance of our Terms & Conditions available on our website.</p>
+    <p>This service consists of intermediary execution of derivative trades via a rule based system that operated under direct human supervision. This service does not constitute portfolio management or discretionary investment management.</p>
     <p>Trading carries risk. You are fully responsible for your capital invested and decision to utilise the system to execute trades.</p>
-    <p>You understand that the capital you invest in trading to utilise this system with, can be lost, and you agree to only risk capital you are comfortable with loosing, and Bankroll FX and its parties are not and never will be held liable for any losses incurred whatsoever.</p>
+    <p>You understand that the capital you invest in trading to utilise this system with, can be lost in full, and you agree to only risk capital you are comfortable with loosing, and Bankroll FX and its parties are not and never will be held liable for any losses incurred as defined in our Terms & Conditions. Nothing in this clause nor our Terms and Conditions excludes liability arising from fraud, wilful misconduct or gross negligence.</p>
 
     <hr/>
 
-    <p>Welcome to Bankroll.</p>
+    <p>Welcome to Bankroll. After completing these short steps you will have access to the tools and systems.</p>
     <p><strong> Bankroll FX</strong></p>
 
     </div>
@@ -109,7 +115,7 @@ exports.handler = async (event) => {
         console.log("Sending email to:", email);
 
         await resend.emails.send({
-            from: "Bankroll FX Education <info@bankrollfx.com>",
+            from: "Bankroll FX <info@bankrollfx.com>",
             to: email,
             subject: `Payment Received - Welcome to Bankroll ${packageType} Activated`,
             html: generateEmailTemplate(name, packageType),
