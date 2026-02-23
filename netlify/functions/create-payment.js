@@ -93,7 +93,7 @@ export async function handler(event) {
                                 "Payment ID": data.id,
                                 "Payment Status": "pending",
                                 "Created at": new Date().toISOString(),
-                                "Consent Timestamp": contentTimestamp,
+                                "Consent Timestamp": consentTimestamp,
                                 "Marketing Consent": marketingConsent ? "Yes" : "No",
                                 "Risk Consent": riskConsent ? "Yes" : "No",
                                 "Next Billing Date": null,
