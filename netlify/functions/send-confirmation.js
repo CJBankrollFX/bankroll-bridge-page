@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -66,7 +68,7 @@ function generateEmailTemplate(name, packageType) {
 
     <hr/>
 
-    <h3>Step 3 - Contact Admin Either via this email or Telegram below, to go over Risk Tiers, Complete your Intemediary Mandate and Link Your Account to the System</h3>
+    <h3>Step 3 - Contact Admin Either via this email or Telegram below, to go over Risk Tiers, Fill in the attached documents, sign, and send signed copies back by replying to this email. Once peramteters have been confirmed, we will link youS to the System</h3>
     <a href="https://t.me/Bankroll_Forex_Admin" style="${buttonStyle}">
     Contact Admin on Telegram
     </a>
@@ -96,7 +98,7 @@ function generateEmailTemplate(name, packageType) {
     <p>By completing your purchase, you confirmed acceptance of our Terms & Conditions available on our website.</p>
     <p>This service consists of intermediary execution of derivative trades via a rule based system that operated under direct human supervision. This service does not constitute portfolio management or discretionary investment management.</p>
     <p>Trading carries risk. You are fully responsible for your capital invested and decision to utilise the system to execute trades.</p>
-    <p>You understand that the capital you invest in trading to utilise this system with, can be lost in full, and you agree to only risk capital you are comfortable with loosing, and Bankroll FX and its parties are not and never will be held liable for any losses incurred as defined in our Terms & Conditions. Nothing in this clause nor our Terms and Conditions excludes liability arising from fraud, wilful misconduct or gross negligence.</p>
+    <p>You understand that the capital you invest in trading to utilise this system with, can be lost in full, and you agree to only risk capital you are comfortable with loosing, and Bankroll FX and its parties will not be held liable for any losses incurred as defined in our Terms & Conditions. Nothing in this clause nor our Terms and Conditions excludes liability arising from fraud, wilful misconduct or gross negligence.</p>
 
     <hr/>
 
@@ -114,11 +116,29 @@ exports.handler = async (event) => {
 
         console.log("Sending email to:", email);
 
+        //Locate PDFs
+        const mandatePath = path.join(process.cwd(), "docs/intermediary-mandate.pdf");
+        const riskPath = path.join(process.cwd(), "docs/risk-declaration.pdf");
+
+        //Convert to Base64 for Redend
+        const mandateBase64 = fs.readFileSync(mandatePath).toString("base64");
+        const riskBase64 = fs.readFileSync(riskPath).toString("base64");
+
         await resend.emails.send({
             from: "Bankroll FX <info@bankrollfx.com>",
             to: email,
             subject: `Payment Received - Welcome to Bankroll ${packageType} Activated`,
             html: generateEmailTemplate(name, packageType),
+            attachments: [
+                {
+                    filename: "intermediary-mandate.pdf",
+                    content: mandateBase64,
+                },
+                {
+                    filename: "risk-declaration.pdf",
+                    content: riskBase64,
+                }
+            ],
         });
 
         return {
