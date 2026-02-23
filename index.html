@@ -621,8 +621,6 @@ if (openTermsBtn && closeTermsBtn && termsModal) {
 
 document.getElementById("confirmPayBtn").addEventListener("click", function () {
 
-  fbq('track', 'InitiateCheckout');
-  
   if (!selectedAmount) {
     alert("Please select a package first");
   return;
@@ -649,6 +647,13 @@ async function pay(amountInRands, packageType) {
     if (!marketingConsent.checked || !riskConsent.checked) {
       alert("Please confirm consent and risk acknowledgement before proceeding.");
       return;
+    }
+
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'InitiateCheckout', {
+        value: amountInRands,
+        currency: "ZAR"
+      });
     }
 
     document.getElementById("loadingIndicator").style.display = "flex";

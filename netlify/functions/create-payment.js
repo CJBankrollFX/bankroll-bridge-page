@@ -38,7 +38,7 @@ export async function handler(event) {
             consentTimestamp
          } = JSON.parse(event.body);
 
-        if (!amount || amount < 20) {
+        if (!amount || amount < 750) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: "Invalid amount" }),
