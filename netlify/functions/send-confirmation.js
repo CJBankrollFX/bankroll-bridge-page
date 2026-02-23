@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -68,7 +66,7 @@ function generateEmailTemplate(name, packageType) {
 
     <hr/>
 
-    <h3>Step 3 - Contact Admin Either via this email or Telegram below, to go over Risk Tiers, Fill in the attached documents, sign, and send signed copies back by replying to this email. Once peramteters have been confirmed, we will link youS to the System</h3>
+    <h3>Step 3 - Contact Admin Either via this email or Telegram below, to go over Risk Tiers, Fill in the attached documents, sign, and return by replying to this email. Once peramteters have been confirmed, we will link youS to the System</h3>
     <a href="https://t.me/Bankroll_Forex_Admin" style="${buttonStyle}">
     Contact Admin on Telegram
     </a>
@@ -105,6 +103,25 @@ function generateEmailTemplate(name, packageType) {
     <p>Welcome to Bankroll. After completing these short steps you will have access to the tools and systems.</p>
     <p><strong> Bankroll FX</strong></p>
 
+    <h3>Required Documents</h3>
+    <p>Please download, complete and return the following documents:</p>
+
+    <p>
+    <a href="https://bankrollfx.com/docs/intermediary-mandate.pdf" target="_blank">
+    Download Intermediary Mandate
+    </a>
+    </p>
+
+    <p>
+    <a href="https://bankrollfx.com/docs/risk-declaration.pdf" target="_blank">
+    Download Risk Declaration
+    </a>
+    </p>
+
+    <p>
+    Once completed, please reply to this email with the signed documents attached.
+    </p>
+
     </div>
     `;
 }
@@ -116,29 +133,11 @@ exports.handler = async (event) => {
 
         console.log("Sending email to:", email);
 
-        //Locate PDFs
-        const mandatePath = path.join(process.cwd(), "docs/intermediary-mandate.pdf");
-        const riskPath = path.join(process.cwd(), "docs/risk-declaration.pdf");
-
-        //Convert to Base64 for Redend
-        const mandateBase64 = fs.readFileSync(mandatePath).toString("base64");
-        const riskBase64 = fs.readFileSync(riskPath).toString("base64");
-
         await resend.emails.send({
             from: "Bankroll FX <info@bankrollfx.com>",
             to: email,
             subject: `Payment Received - Welcome to Bankroll ${packageType} Activated`,
             html: generateEmailTemplate(name, packageType),
-            attachments: [
-                {
-                    filename: "intermediary-mandate.pdf",
-                    content: mandateBase64,
-                },
-                {
-                    filename: "risk-declaration.pdf",
-                    content: riskBase64,
-                }
-            ],
         });
 
         return {
