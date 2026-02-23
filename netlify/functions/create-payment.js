@@ -27,14 +27,30 @@ async function saveToAirtable(record) {
 
 export async function handler(event) {
     try {
-        const { amount, email, name, contact, packageType } = JSON.parse(event.body);
+        const {
+            amount,
+            email,
+            name,
+            contact,
+            packageType,
+            marketingConsent,
+            riskConsent,
+            consentTimestamp
+         } = JSON.parse(event.body);
 
         if (!amount || amount < 20) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: "Invalid amount" }),
                 };
-                }
+            }
+        
+        if (!marketingConsent || !riskConsent) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: "Consent not provided" }),
+            };
+        }
 
                 const YOCO_SECRET_KEY = process.env.YOCO_SECRET_KEY;
                 if (!YOCO_SECRET_KEY) {
@@ -77,6 +93,9 @@ export async function handler(event) {
                                 "Payment ID": data.id,
                                 "Payment Status": "pending",
                                 "Created at": new Date().toISOString(),
+                                "Consent Timestamp": contentTimestamp,
+                                "Marketing Consent": marketingConsent ? "Yes" : "No",
+                                "Risk Consent": riskConsent ? "Yes" : "No",
                                 "Next Billing Date": null,
                                 "Source": "Landing Page",
                                 });
