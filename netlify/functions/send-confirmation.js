@@ -84,7 +84,7 @@ function generateEmailTemplate(name, packageType) {
     <hr/>
 
     <h3>Step 4 - Fund Your Space Markets Account</h3>
-    <p>Minimum R1500 required for system operation. R3000+ recommended for optimal risk management.</p>
+    <p>You may fund your brokerage account with any amount you can afford to risk, however for margin requirements on trading these symbols, an amount less than R2000 is not recommended on a standard account. A Micro/Cent account would be more suitable for this account balance.</p>
 
     <hr/>
 
