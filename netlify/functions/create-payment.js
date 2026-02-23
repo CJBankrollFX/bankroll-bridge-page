@@ -83,6 +83,7 @@ export async function handler(event) {
                             });
 
                             const data = await response.json();
+                            console.log("YOCO RAW RESPONSE:", data);
 
                             await saveToAirtable({
                                 "Full Name": name,
