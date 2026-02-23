@@ -20,7 +20,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
- 
+
   <meta charset="UTF-8" />
   <title>Trading System Access</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -620,6 +620,9 @@ if (openTermsBtn && closeTermsBtn && termsModal) {
 });
 
 document.getElementById("confirmPayBtn").addEventListener("click", function () {
+
+  fbq('track', 'InitiateCheckout');
+  
   if (!selectedAmount) {
     alert("Please select a package first");
   return;
