@@ -674,6 +674,9 @@ async function pay(amountInRands, packageType) {
             });
 
             const data = await res.json();
+
+            console.log("SERVER RESPONSE:", data);
+
             if (data.error) {
               alert("Payment failed: " + data.error);
               } else {
