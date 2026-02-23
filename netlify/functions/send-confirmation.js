@@ -66,7 +66,7 @@ function generateEmailTemplate(name, packageType) {
 
     <hr/>
 
-    <h3>Step 3 - Contact Admin Either via this email or Telegram below, to go over Risk Tiers, Fill in the attached documents, sign, and return by replying to this email. Once peramteters have been confirmed, we will link youS to the System</h3>
+    <h3>Step 3 - Contact Admin Either via this email or Telegram below, to go over Risk Tiers or any assistance needed. Download the required documents below, complete, sign, and return by replying to this email. Once peramteters have been confirmed, we will link you to the System.</h3>
     <a href="https://t.me/Bankroll_Forex_Admin" style="${buttonStyle}">
     Contact Admin on Telegram
     </a>
@@ -94,32 +94,56 @@ function generateEmailTemplate(name, packageType) {
 
     <h3>Important Disclaimer</h3>
     <p>By completing your purchase, you confirmed acceptance of our Terms & Conditions available on our website.</p>
-    <p>This service consists of intermediary execution of derivative trades via a rule based system that operated under direct human supervision. This service does not constitute portfolio management or discretionary investment management.</p>
+    <p>This service consists of non-discretionary intermediary execution of derivative trades via a rule based system that operated under direct human supervision. This service does not constitute portfolio management or discretionary investment management. The system does not make independant investment decisions and operates strictly according to predefined parameters selected by the client</p>
     <p>Trading carries risk. You are fully responsible for your capital invested and decision to utilise the system to execute trades.</p>
-    <p>You understand that the capital you invest in trading to utilise this system with, can be lost in full, and you agree to only risk capital you are comfortable with loosing, and Bankroll FX and its parties will not be held liable for any losses incurred as defined in our Terms & Conditions. Nothing in this clause nor our Terms and Conditions excludes liability arising from fraud, wilful misconduct or gross negligence.</p>
+    <p>You understand that the capital you invest in trading to utilise this system with, can be lost in full, and you agree to only risk capital you are comfortable with loosing, and Bankroll FX and its representatives will not be held liable trading losses arising from market risk or client-selected parameters, subject to the applicable law, as defined in our Terms & Conditions. Nothing in this clause nor our Terms and Conditions excludes liability arising from fraud, wilful misconduct or gross negligence.</p>
+    <p>Client data is processed in accordance with applicable data protection legislation and retained for regulatory compliance purposes.</p>
 
     <hr/>
 
     <p>Welcome to Bankroll. After completing these short steps you will have access to the tools and systems.</p>
     <p><strong> Bankroll FX</strong></p>
 
-    <h3>Required Documents</h3>
-    <p>Please download, complete and return the following documents:</p>
-
-    <p>
-    <a href="https://bankrollfx.com/docs/intermediary-mandate.pdf" target="_blank">
-    Download Intermediary Mandate
-    </a>
+    <hr style="border:0;border-top:1px solid #333;margin:30px 0;"/> 
+    
+    <h3 style="color:#ffffff;">Required Onboarding Documents</h3> 
+    <p style="color:#cccccc;"> 
+    Please download, complete and sign the following documents before system activation: 
+    </p> 
+    
+    <p style="margin:20px 0;"> 
+    <a href="https://bankrollfx.com/docs/intermediary-mandate.pdf"  
+    target="_blank" 
+    style="display:inline-block; 
+    padding:14px 24px; 
+    background-color:#00b248; 
+    color:#ffffff; 
+    text-decoration:none; 
+    font-weight:600; 
+    border-radius:8px; 
+    font-size:16px;"> 
+    Download Intermediary Mandate 
+    </a> 
+    </p> 
+    
+    <p style="margin:20px 0;"> 
+    <a href="https://bankrollfx.com/docs/risk-declaration.pdf"  
+    target="_blank" 
+    style="display:inline-block; 
+    padding:14px 24px; 
+    background-color:#00b248; 
+    color:#ffffff; 
+    text-decoration:none; 
+    font-weight:600; 
+    border-radius:8px; 
+    font-size:16px;"> 
+    Download Risk Declaration 
+    </a> 
     </p>
-
-    <p>
-    <a href="https://bankrollfx.com/docs/risk-declaration.pdf" target="_blank">
-    Download Risk Declaration
-    </a>
-    </p>
-
-    <p>
-    Once completed, please reply to this email with the signed documents attached.
+    
+    <p style="color:#cccccc;">
+    Once completed, reply to this email with the signed documents attached.
+    Activation will proceed once parameters are confirmed.
     </p>
 
     </div>
