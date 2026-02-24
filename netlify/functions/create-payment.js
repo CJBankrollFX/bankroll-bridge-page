@@ -103,7 +103,7 @@ export async function handler(event) {
 
                             return {
                                 statusCode: 200,
-                                body: JSON.stringify({ checkoutUrl: data.redirect_url }),
+                                body: JSON.stringify({ checkoutUrl: data.redirectUrl }),
                                 };
                                 } catch (err) {
                                     return {
