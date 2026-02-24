@@ -15,10 +15,19 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 
 fbq('init', '1336694831438952');
 fbq('track', 'PageView');
-fbq('track', 'Purchase', {
-  value: 750.00,
-  currency: 'ZAR'
-});
+
+/* Dynamic Purchase Tracking */
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const amount = parseFloat(params.get("amount"));
+
+  if (typeof fbq !== "undefined" && amount) {
+    fbq('track', 'Purchase', {
+      value: amount,
+      currency: "ZAR"
+    });
+  }
+})();
 </script>
 
 <noscript>

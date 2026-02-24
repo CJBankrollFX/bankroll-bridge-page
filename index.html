@@ -651,7 +651,7 @@ async function pay(amountInRands, packageType) {
 
     if (typeof fbq !== "undefined") {
       fbq('track', 'InitiateCheckout', {
-        value: amountInRands,
+        value: parseFloat(amountInRands),
         currency: "ZAR"
       });
     }
