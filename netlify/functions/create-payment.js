@@ -66,7 +66,7 @@ export async function handler(event) {
                             body: JSON.stringify({
                                 amount: amount *100, //cents
                                 currency: "ZAR",
-                                successUrl: `https://bankrollfx.com/success.html?package=${packageType}`,
+                                successUrl: `https://bankrollfx.com/success.html?package=${encodeURIComponent(packageType)}`,
                                 cancelUrl: "https://bankrollfx.com",
                                 customer: {
                                     email,
