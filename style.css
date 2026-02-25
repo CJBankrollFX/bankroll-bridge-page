@@ -5,10 +5,14 @@
 }
 
 body {
-  background: #000;
+  background: radial-gradient(circle at top, #111 0%, #000 60%);
   color: #fff;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
+}
+
+.accent {
+  color: #00c96b;
 }
 
 /* HERO */
@@ -42,14 +46,21 @@ body {
   }
 
 h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 22px;
-  font-weight: normal;
-  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 15px;
 }
 
 .hero-subtext {
@@ -59,17 +70,20 @@ h2 {
 }
 
 button {
-  background: #00ff99;
+  background: linear-gradient(135deg, #00c96b, #00a855);
   color: #000;
-  padding: 15px 30px;
-  font-size: 18px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 700;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 button:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 201, 107, 0.3);
 }
 
 .pricing-buttons {
