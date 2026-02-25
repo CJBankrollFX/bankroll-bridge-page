@@ -89,10 +89,10 @@ button:hover {
 .pricing-buttons {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
   max-width: 420px;
-  margin: 30px auto;
-  }
+  margin: 35px auto 10px;
+}
 
 .fine-print {
   font-size: 12px;
@@ -265,26 +265,33 @@ footer {
             background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
             }
 
-/* HOW IT WORKS LIST*/
+/* HOW IT WORKS */
+
+.how-it-works {
+  margin-top: 30px;
+}
+
 .how-it-works-list {
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none;
+  padding: 0;
   margin: 20px auto 30px;
-  max-width: 420px;
+  max-width: 500px;
   text-align: left;
-  }
+}
 
-  .how-it-works-list li {
-    margin-bottom: 12px;
-    line-height: 1.5;
-    }
+.how-it-works-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-.how-it-works h3 {
-  font-size: 1.25rem;
-  margin-top: 32px;
-  margin-bottom: 12px;
-  font-weight: 600;
-  }
+.how-it-works-list li::before {
+  content: "✓";
+  font-weight: 700;
+  color: #00c96b;
+}
 
 /* Legal short text */
 .legal-short {
@@ -558,4 +565,86 @@ CLIENT DETAILS FORM
         gap: 18px;
         margin: 30px 15px;
     }
+}
+
+/* ================================
+PACKAGE DETAILS SECTION
+================================ */
+
+#packageDetails {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.package-box {
+  background: #0b0b0b;
+  border-radius: 16px;
+  padding: 30px 24px;
+  max-width: 500px;
+  margin: 25px auto;
+  box-shadow: 0 20px 40px rgba(0, 255, 170, 0.08);
+}
+
+#packageTitle {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+#packagePrice {
+  font-size: 15px;
+  opacity: 0.75;
+  margin-bottom: 20px;
+}
+
+/* FEATURES LIST */
+
+#packageFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+#packageFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Green Check Icon */
+.check-icon {
+  min-width: 18px;
+  margin-top: 2px;
+}
+
+.check-icon i {
+  font-size: 14px;
+  background: linear-gradient(135deg, #00c96b, #00a855);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Feature text */
+.feature-text {
+  opacity: 0.85;
+}
+
+/* Disclaimer box */
+
+#dynamicDisclaimer {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  background: rgba(0, 255, 170, 0.06);
+  padding: 14px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
 }

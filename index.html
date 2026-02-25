@@ -167,7 +167,7 @@ src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
   </div>
 
   <div class="results-card">
-    <h4>Student Results</h4>
+    <h4>Client Results</h4>
 
     <div class="results-slider">
       <img src="images/xauusd-result-1.jpeg"
@@ -236,11 +236,12 @@ src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
     </div>
 
     <p class="results-note">
-      Student Results - Live executions from the system.
+      Client Results - Live executions from the system.
     </p>
     <p>
-      Please note that the images shown represent historical execution 
-      examples and are not guarantees of future performance.<br>
+      *Images shown represent historical
+      execution examples and are not<br>
+      guarantees of future performance.<br>
     </p>
   </div>
 </section>
@@ -568,15 +569,16 @@ href="https://instagram.com/cjwilliams_bankroll"
   
   showPackageDetails(
     "Lifetime Access - R5,000 Once-Off",
-    "First month of hosting fees on us",
+    "First month hosting included",
+    "R187/month thereafter"
 
     [
-      "Lifetime licensed activation to the Trading System",
-      "Advanced risk management built-in with Client's own pre-defined parameters",
-      "Works on US30, NAS100 & XAUUSD - Indices share 1 active account, XAUUSD requires a seperate activated account",
-      "Full setup guidance",
+      "Lifetime license activation to the Trading System",
+      "Advanced built-in risk management aligned to your pre-defined parameters",
+      "Compatible with US30, NAS100 & XAUUSD",
+      "Full guided setup assistance",
       "Instructions to Secure Hosting will be communicated via email",
-      "Cancel/Pause Access anytime"
+      "Pause or disconnect anytime"
       ]
     );
 
@@ -584,7 +586,7 @@ href="https://instagram.com/cjwilliams_bankroll"
     disclaimerEl.innerHTML = `
     One-time lifetime activation fee of <strong>R5,000</strong> excludes the monthly hosting fee.<br>
     A small hosting and system maintenance fee of <strong>R187 per month</strong> additionally applies to securely host the system, per active account, and ensure continuous updates and performance improvements.
-    <strong>First month on us.</strong>
+    <strong>First month included.</strong>
     `;
     disclaimerEl.style.display = "block";
   });
@@ -595,22 +597,19 @@ href="https://instagram.com/cjwilliams_bankroll"
 
       showPackageDetails(
         "Monthly Access - R750 / Month",
-        "Includes hosting & update fees",
 
         [
-          "Full Trading System Access",
-          "Monthly Hosting Fee for one active account Included",
-          "Automatic Updates & Maintenance",
-          "Advanced risk management built-in with Client's own pre-defined parameters",
-          "Works on US30, NAS100 & XAUUSD - Indices share 1 active account, XAUUSD requires a seperate activated account",
-          "Full setup Guidance",
-          "Cancel/Pause Access Anytime"
-          ]
+          "Full Calendar Month Trading System Access",
+          "Advanced built-in risk management aligned to your pre-defined parameters",
+          "Compatible with US30, NAS100 & XAUUSD",
+          "Full guided setup assistance",
+          "Pause or disconnect anytime"
+        ]
     );
 
     // Monthly disclaimer
     disclaimerEl.innerHTML = `
-    <strong>R750 / Month<strong> includes hosting and system maintenance fees to securely
+    <strong>R750 / Month</strong> includes hosting and system maintenance fees to securely
     host the system and ensure continuous updates and performance improvements.<br><br>
     You will receive a <strong>Yoco payment request every calendar month</strong> on the day of first
     purchase optional to renew your subscription. A missed payment revokes your rights to utilise the service and your access will be
@@ -628,9 +627,14 @@ href="https://instagram.com/cjwilliams_bankroll"
       list.innerHTML = "";
       features.forEach(item => {
         const li = document.createElement("li");
-        li.innerText = item;
+        li.innerHTML = `
+        <span class="check-icon">
+          <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="feature-text">${item}</span>
+          `;
         list.appendChild(li);
-        });
+      });
 
         document.getElementById("packageDetails").scrollIntoView({ behavior: "smooth" });
         }
