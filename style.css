@@ -21,16 +21,6 @@ body {
   text-align: center;
 }
 
-.hero-logo {
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.hero-logo img {
-  width: 110px;
-  height: auto;
-}
-
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -188,6 +178,27 @@ button:hover {
 /* DISCLAIMER */
 footer {
   padding: 30px 20px;
+}
+
+.footer-logo {
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+.footer-logo img {
+  width: 90px;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(0,201,107,0.15));
+}
+
+.contact-links a {
+  color: #00c96b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
 }
 
 .disclaimer {
