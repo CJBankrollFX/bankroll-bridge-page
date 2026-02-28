@@ -518,24 +518,80 @@ CLIENT DETAILS FORM
   to { transform: rotate(360deg); }
 }
 
+/* ===== TRUST STRIP ===== */
+
+.trust-strip {
+  margin: 35px auto 10px;
+  padding: 20px 25px;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.trust-item i {
+  font-size: 16px;
+  background: linear-gradient(135deg, #00c96b, #00a855);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .trust-strip {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+}
+
 .feature-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    max-width: 600px;
-    margin: 40px auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,201,107,0.3);
 }
 
 .feature-item h3 {
     font-size: 15px;
     font-weight: 700;
-    margin: 8px 0 4px;
+    margin: 10px 0 6px;
 }
 
 .feature-item p {
-    font-size: 13px;
+    font-size: 14px;
     opacity: 0.75;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .feature-icon {
@@ -548,17 +604,11 @@ CLIENT DETAILS FORM
   -webkit-text-fill-color: transparent;
 }
 
-.feature-item {
-  text-align: center;
-  padding: 10px;
-    opacity: 0;
-    transform: translateY(15px);
-    animation: fadeUp 0.5s ease forwards;
-}
-
 .feature-item:nth-child(2) { animation-delay: 0.1s; }
 .feature-item:nth-child(3) { animation-delay: 0.2s; }
 .feature-item:nth-child(4) { animation-delay: 0.3s; }
+.feature-item:nth-child(5) { animation-delay: 0.4s; }
+.feature-item:nth-child(6) { animation-delay: 0.5s; }
 
 @keyframes fadeUp {
     from {
@@ -571,11 +621,17 @@ CLIENT DETAILS FORM
     }
 }
 
-@media (max-width: 768px) {
-    .feature-grid {
-        gap: 18px;
-        margin: 30px 15px;
-    }
+@media (max-width: 992px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
 }
 
 /* ================================
