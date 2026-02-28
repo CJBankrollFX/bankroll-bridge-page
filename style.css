@@ -53,10 +53,109 @@ h2 {
   margin-bottom: 15px;
 }
 
-.hero-subtext {
-  max-width: 700px;
-  margin: 0 auto 30px;
+.hero-pain {
+  max-width: 650px;
+  margin: 30px auto 40px;
+  text-align: center;
+}
+
+.pain-line {
+  font-size: 16px;
+  opacity: 0.65;
+  margin: 8px 0;
+  opacity: 0.55;
+}
+
+.hero-bridge {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.power-line {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00c96b;
+  margin-top: 15px;
+}
+
+.pain-cta {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #1bd45f, #0fa94d);
+  color: #000;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.pain-cta:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================
+   How It Works Section
+=========================== */
+
+.how-section {
+  padding: 80px 20px;
+  background: #0a0c10;
+  text-align: center;
+}
+
+.how-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.how-heading {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.how-step {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 25px 15px;
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00c96b, #00a855);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.how-step p {
+  font-size: 15px;
   opacity: 0.85;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
 }
 
 button {
@@ -629,7 +728,7 @@ CLIENT DETAILS FORM
 
 @media (max-width: 600px) {
   .feature-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 }
