@@ -151,6 +151,90 @@ html {
   opacity: 0.85;
 }
 
+.pricing-card {
+  background: #0b0b0b;
+  border-radius: 16px;
+  padding: 30px 25px;
+  margin: 30px auto;
+  max-width: 520px;
+  box-shadow: 0 20px 40px rgba(0,255,153,0.08);
+  text-align: left;
+}
+
+.package-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.package-sub {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  margin-bottom: 20px;
+}
+
+.feature-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.feature-row i {
+  color: #00c96b;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.price-stack {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.normal-price {
+  text-decoration: line-through;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.today-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #00c96b;
+  margin-top: 5px;
+}
+
+.launch-note {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+.monthly-card {
+  border: 1px solid rgba(0, 201, 107, 0.35);
+  box-shadow: 
+    0 0 0 1px rgba(0, 201, 107, 0.25),
+    0 20px 40px rgba(0, 255, 153, 0.18);
+}
+
+.recommended-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #00c96b, #00a855);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .how-steps {
