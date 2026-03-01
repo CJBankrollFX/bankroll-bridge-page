@@ -957,3 +957,7 @@ PACKAGE DETAILS SECTION
   margin-right: auto;
   opacity: 0.85;
 }
+
+#launch {
+  scroll-margin-top: 100px;
+}
