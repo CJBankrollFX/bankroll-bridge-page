@@ -100,6 +100,65 @@ html {
   scroll-behavior: smooth;
 }
 
+.pain-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pain-heading {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.pain-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.pain-icon {
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.pain-close {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.stress-line {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.accent-line {
+  color: #00c96b;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .pain-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===========================
    How It Works Section
 =========================== */
