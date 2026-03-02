@@ -1299,6 +1299,7 @@ PACKAGE DETAILS SECTION
   z-index: 9999;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
   border-bottom: 1px solid rgba(255, 0, 0, 0.4);
+  padding-top: env(safe-area-inset-top);
 }
 
 .launch-inner {
@@ -1343,7 +1344,30 @@ PACKAGE DETAILS SECTION
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+
+  .launch-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .launch-label {
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .countdown-clock {
+    font-size: 16px;
+    padding: 8px 16px;
+    letter-spacing: 1.5px;
+  }
+
+}
+
 /* Push page content down */
 body {
-  padding-top: 70px;
+  padding-top: 50px;
 }
