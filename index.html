@@ -33,6 +33,13 @@ src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
   />
 </head>
 <body>
+<!-- LAUNCH COUNTDOWN BAR -->
+<div class="launch-bar">
+  <span class="launch-text">
+    ⏳ Launch Pricing Ends In:
+  </span>
+  <span id="countdown"></span>
+</div>
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -1078,6 +1085,30 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="loading-spinner"></div>
   <span>Connecting to secure payment...</span>
 </div>
+
+<script>
+  const launchEndDate = new Date("March 15, 2026 23:59:59").getTime(); // CHANGE DATE
+
+  const countdownEl = document.getElementById("countdown");
+
+  const timer = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = launchEndDate - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      countdownEl.innerHTML = "Launch Offer Ended";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+
+    countdownEl.innerHTML =
+      days + "D " + hours + "H " + minutes + "M";
+  }, 1000);
+</script>
 
 </body>
 </html>
