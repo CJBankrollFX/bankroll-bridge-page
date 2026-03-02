@@ -400,6 +400,12 @@ html {
   font-size: 14px;
 }
 
+/* GOLD CHECK ICON */
+.gold-tick {
+  color: #d4af37 !important;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+}
+
 .price-stack {
   margin-top: 15px;
   display: flex;
@@ -479,6 +485,42 @@ button:hover {
   font-size: 12px;
   margin-top: 15px;
   opacity: 0.7;
+}
+
+/* LIFETIME PREMIUM CARD */
+.lifetime-card {
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    0 0 25px rgba(212, 175, 55, 0.35),
+    0 20px 50px rgba(212, 175, 55, 0.18);
+  transform: scale(1.02);
+  position: relative;
+}
+
+/* GOLD BADGE */
+.premium-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.breakeven-note {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.ownership-line {
+  font-size: 13px;
+  margin: 18px 0 12px;
+  opacity: 0.85;
 }
 
 /* TESTIMONIALS */
