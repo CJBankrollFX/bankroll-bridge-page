@@ -13,12 +13,8 @@ function generateEmailTemplate(name, packageType) {
     const renewalSection = isLifetime
     ? `
     <hr/>
-    <h3>Server Hosting Fee Renewal</h3>
-    <p>Your Lifetime Access includes <strong>1 month free hosting.</strong></p>
-    <p>Thereafter, a <strong>monthly R187 hosting fee</strong> applies to keep your system connected.</p>
-    <p>If a payment is missed, your server will automatically disconnect until renewal is completed. You can pause anytime, and renew once ready to <strong>using the button below.</strong></p>
-    <a href="https://pay.yoco.com/r/mO5yLK" style="${buttonStyle}">
-    Pay Monthly Server Fee (R187)
+    <h3>Server Hosting</h3>
+    <p>Your Lifetime Access includes <strong>Lifetime free hosting.</strong></p>
     </a>
     `
     : `
@@ -43,7 +39,7 @@ function generateEmailTemplate(name, packageType) {
 
     <h2>Welcome ${name || ""},</h2>
 
-    <p>Your <strong>${packageType}</strong> has been Successfully Confirmed - Let's Get You Live. You now have permenant access to the Bankroll Trading System.</p>
+    <p>Your <strong>${packageType}</strong> has been Successfully Confirmed - Let's Get You Live. You now have permanent access to the Bankroll Trading System.</p>
 
     <hr/>
 
@@ -92,7 +88,7 @@ function generateEmailTemplate(name, packageType) {
 
     <hr/>
 
-    <h3>Step 3 - Contact Admin & Download the required attached documents below, complete, sign, and return by replying to this email. Once peramteters have been confirmed, we will link you to the System.</h3>
+    <h3>Step 3 - Contact Admin & Download the required attached documents below, complete, sign, and return by replying to this email. Once parameters have been confirmed, we will link you to the System.</h3>
     <a href="https://t.me/Bankroll_Forex_Admin" style="${buttonStyle}">
     Contact Admin on Telegram
     </a>
