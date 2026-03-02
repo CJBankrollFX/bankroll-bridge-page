@@ -1097,18 +1097,20 @@ const timer = setInterval(function () {
 
   if (distance < 0) {
     clearInterval(timer);
-    countdownEl.innerHTML = "00D 00H 00M";
+    countdownEl.innerHTML = "00D 00H 00M 00S";
     return;
   }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
 
   countdownEl.innerHTML =
     String(days).padStart(2, '0') + "D " +
     String(hours).padStart(2, '0') + "H " +
-    String(minutes).padStart(2, '0') + "M";
+    String(minutes).padStart(2, '0') + "M" +
+    String(seconds).padStart(2, '0') + "S";
 
 }, 1000);
 </script>
