@@ -398,6 +398,33 @@ button:hover {
   margin-bottom: 15px;
 }
 
+.glow-list {
+  list-style: none;
+  margin-top: 18px;
+  padding: 0;
+}
+
+.glow-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.glow-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: #00c96b;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,201,107,0.8);
+}
+
 /* CONTACT */
 .contact a {
   color:#00ff99;
