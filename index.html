@@ -45,6 +45,12 @@ src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
 <section class="hero">
   <div class="hero-container">
 
+    <button id="adLifetimeCTA" class="cta-btn" style="display:none;">
+      CLAIM YOUR ACCESS KEY
+      (6 LEFT) – R3,000
+      Save R7,000
+    </button>
+
     <!-- VIDEO -->
     <div class="video-wrapper">
     <!-- Tap to unmute overlay -->
@@ -423,6 +429,8 @@ src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
         </ul>
       </div>
 
+      <div id="checkoutSection">
+
       <form id="clientDetailsForm" class="client-form">
         <input type="text" id="clientName" placeholder="Full Name" required/>
         <input type="email" id="clientEmail" placeholder="Email Address" required/>
@@ -438,6 +446,7 @@ src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
           I acknowledge that trading leveraged instruments carries significant risk and may result in loss of capital. I understand that this consent is electronically recorded and stored.
         </label>
       </form>
+      </div>
 
       <p class="legal-short">
         <button type="button" id="openTerms" class="terms-btn">
@@ -884,6 +893,29 @@ href="https://instagram.com/cjwilliams_bankroll"
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const offer = urlParams.get("offer");
+
+  if (offer === "lifetime") {
+
+  const adBtn = document.getElementById("adLifetimeCTA");
+
+  if (adBtn) {
+  adBtn.style.display = "block";
+  }
+  
+  if (adBtn) {
+  adBtn.addEventListener("click", () => {
+  
+  document.getElementById("lifetimeBtn").click();
+  
+  document.getElementById("checkoutSection").scrollIntoView({
+  behavior: "smooth"
+  });
+  
+  });
+  
+  }
+
+  }
 
     let selectedPackage = null;
     let selectedAmount = null;
