@@ -882,6 +882,9 @@ href="https://instagram.com/cjwilliams_bankroll"
 </div>
 
 <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const offer = urlParams.get("offer");
+
     let selectedPackage = null;
     let selectedAmount = null;
 
@@ -889,10 +892,10 @@ href="https://instagram.com/cjwilliams_bankroll"
 
     document.getElementById("lifetimeBtn").addEventListener("click", () =>{
       selectedPackage = "Lifetime Access";
-    selectedAmount = 500000;
+    selectedAmount = offer === "lifetime" ? 300000 : 500000;
   
   showPackageDetails(
-    "Lifetime Access - R5,000 Once-Off",
+    "Lifetime Access - " + (offer === "lifetime" ? "R3,000 Limited Offer" : "R5,000 Once-Off"),
     "Includes Lifetime Hosting",
     [
       "Lifetime access to the automated trading system",
