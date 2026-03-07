@@ -328,11 +328,11 @@ src="https://www.facebook.com/tr?id=1336694831438952&ev=PageView&noscript=1"
 
   <div class="price-stack">
     <div class="normal-price">Usual Price: R10,000</div>
-    <div class="today-price">Launch Access Today: R5,000 Once-Off</div>
+    <div class="today-price" class="today-price">Launch Access Today: R5,000 Once-Off</div>
 
     <div class="breakeven-note">
-      Standard Monthly Price at R1,500 / Month = R18,000 per year<br>
-      <strong>Breakeven in under 4 months at full price</strong>
+      Monthly Users R18,000 per year<br>
+      <strong>Lifetime access pays for itself in under 4 months</strong>
     </div>
     <p class="ownership-line">
       Monthly users rent the system.<br>
@@ -898,6 +898,16 @@ href="https://instagram.com/cjwilliams_bankroll"
   const urlParams = new URLSearchParams(window.location.search);
   const offer = urlParams.get("offer");
 
+  const payBtn = document.getElementById("confirmPayBtn");
+  if (payBtn) {
+    payBtn.innerText = "Unlock My Access Key";
+  }
+
+  const todayPriceEl = document.getElementById("todayPrice");
+  if (offer === "lifetime" && todayPriceEl) {
+    todayPriceEl.innerText = "Launch Access Today: R3,000 Once-Off";
+  }
+
   if (offer === "lifetime") {
 
   const adBtn = document.getElementById("adLifetimeCTA");
@@ -945,8 +955,10 @@ href="https://instagram.com/cjwilliams_bankroll"
     );
 
     // Lifetime disclaimer
+    const lifetimePrice = offer === "lifetime" ? "R3,000" : "R5,000";
+
     disclaimerEl.innerHTML = `
-    Lifetime activation: <strong>R5,000</strong> once-off.<br>
+    Lifetime activation: <strong>${lifetimePrice}</strong> once-off.<br>
     Lifetime of the business & product.
     `;
     disclaimerEl.style.display = "block";
